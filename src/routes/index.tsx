@@ -25,7 +25,16 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import heroImage from "@/assets/hero-education.jpg";
-import admissionImage from "@/assets/admission-process.jpg";
+import amityLogo from "@/assets/universities/amity.png";
+import kurukshetraLogo from "@/assets/universities/kurukshetra.png";
+import parulLogo from "@/assets/universities/parul.png";
+import galgotiasLogo from "@/assets/universities/galgotias.png";
+import allianceLogo from "@/assets/universities/alliance.png";
+import glaLogo from "@/assets/universities/gla.png";
+import vitLogo from "@/assets/universities/vit.png";
+import lpuLogo from "@/assets/universities/lpu.png";
+import manipalLogo from "@/assets/universities/manipal.png";
+import chandigarhLogo from "@/assets/universities/chandigarh.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -49,36 +58,147 @@ export const Route = createFileRoute("/")({
 
 // Navigation Links
 const navLinks = [
-  { name: "Admission Process", href: "#process" },
+  { name: "Career Outcomes", href: "#careers" },
+  { name: "Reviews", href: "#reviews" },
+  { name: "Top Universities", href: "#universities" },
   { name: "Eligibility Checker", href: "#eligibility" },
-  { name: "Why Career4s", href: "#benefits" },
 ];
 
-// Admission steps
-const admissionSteps = [
+// University Logos (Strictly logos/emblems only - no names)
+const universityLogos = [
   {
-    n: "01",
-    t: "Free Profile & Eligibility Evaluation",
-    d: "Share your past qualifications, academic interests, and career goals with our certified counsellors for an instant eligibility evaluation.",
-    icon: Sparkles,
+    id: "amity",
+    name: "Amity University",
+    image: amityLogo,
   },
   {
-    n: "02",
-    t: "University Shortlist & Seat Guidance",
-    d: "We guide you in selecting the right UGC-DEB entitled university based on accreditation (NAAC A++/A+), syllabus structure, and exam modes.",
-    icon: Building2,
+    id: "kurukshetra",
+    name: "Kurukshetra University",
+    image: kurukshetraLogo,
   },
   {
-    n: "03",
-    t: "Document Verification & Fast Application",
-    d: "Our admissions desk verifies your marksheets, IDs, and certificates to ensure 100% error-free university portal submission.",
-    icon: FileCheck,
+    id: "parul",
+    name: "Parul University",
+    image: parulLogo,
   },
   {
-    n: "04",
-    t: "Enrolment ID & LMS Portal Activation",
-    d: "Receive your official University Enrolment Number, Student ID card, and LMS access credentials tracked end-to-end.",
-    icon: Laptop,
+    id: "galgotias",
+    name: "Galgotias University",
+    image: galgotiasLogo,
+  },
+  {
+    id: "alliance",
+    name: "Alliance University",
+    image: allianceLogo,
+  },
+  {
+    id: "gla",
+    name: "GLA University",
+    image: glaLogo,
+  },
+  {
+    id: "vit",
+    name: "Vellore Institute of Technology",
+    image: vitLogo,
+  },
+  {
+    id: "lpu",
+    name: "Lovely Professional University",
+    image: lpuLogo,
+  },
+  {
+    id: "manipal",
+    name: "Manipal University",
+    image: manipalLogo,
+  },
+  {
+    id: "chandigarh",
+    name: "Chandigarh University",
+    image: chandigarhLogo,
+  },
+];
+
+// 8 Featured Top Online Universities with Admission Cards
+const topUniversities = [
+  {
+    id: "amity",
+    name: "Amity University Online",
+    logo: amityLogo,
+    naac: "NAAC A+",
+    approvals: ["UGC-DEB", "WES Recognized", "QS Ranked"],
+    programs: ["Online MBA", "Online MCA", "Online BBA", "Online BCA"],
+    highlights: "Global Faculty • Live Masterclasses • 100% Online Exam Mode",
+    batch: "July 2026 Batch Open",
+  },
+  {
+    id: "manipal",
+    name: "Manipal University Jaipur (Online)",
+    logo: manipalLogo,
+    naac: "NAAC A+",
+    approvals: ["UGC-DEB", "AICTE Approved", "NIRF Ranked"],
+    programs: ["Online MBA", "Online MCA", "Online B.Com", "Online M.Com"],
+    highlights: "Free Coursera Subscriptions • 20,000+ Alumni • Dedicated Career Desk",
+    batch: "July 2026 Batch Open",
+  },
+  {
+    id: "chandigarh",
+    name: "Chandigarh University Online",
+    logo: chandigarhLogo,
+    naac: "NAAC A+",
+    approvals: ["UGC-DEB", "NIRF Top 30", "AICTE Approved"],
+    programs: ["Online MBA", "Online MCA", "Online M.Sc Data Science", "Online BBA"],
+    highlights: "Harvard Mentors • 300+ Hiring Partners • Flexible LMS Portal",
+    batch: "July 2026 Batch Open",
+  },
+  {
+    id: "lpu",
+    name: "Lovely Professional University Online",
+    logo: lpuLogo,
+    naac: "NAAC A++",
+    approvals: ["UGC-DEB", "NIRF Rank 38", "WES Accepted"],
+    programs: ["Online MBA", "Online MCA", "Online BCA", "Online MA"],
+    highlights: "Interactive LMS App • Industry Mock Interviews • Global Recognition",
+    batch: "July 2026 Batch Open",
+  },
+  {
+    id: "parul",
+    name: "Parul University Online",
+    logo: parulLogo,
+    naac: "NAAC A++",
+    approvals: ["UGC-DEB", "AICTE Approved", "Govt. Recognized"],
+    programs: ["Online MBA", "Online MCA", "Online BBA", "Online MSW"],
+    highlights: "20+ In-demand Specializations • Practical Case Studies • 1-on-1 Mentorship",
+    batch: "July 2026 Batch Open",
+  },
+  {
+    id: "gla",
+    name: "GLA University Online",
+    logo: glaLogo,
+    naac: "NAAC A+",
+    approvals: ["UGC-DEB", "IACBE Accredited", "12B UGC Status"],
+    programs: ["Online MBA", "Online MCA", "Online B.Com (Hons)", "Online BBA"],
+    highlights: "Self-Paced Learning • Comprehensive E-Library • Industry Readiness",
+    batch: "July 2026 Batch Open",
+  },
+  {
+    id: "alliance",
+    name: "Alliance University Online",
+    logo: allianceLogo,
+    naac: "NAAC A",
+    approvals: ["UGC-DEB", "AACSB Member", "AIU Recognized"],
+    programs: ["Executive MBA", "Online PGDM", "Online BBA", "Online M.Com"],
+    highlights: "Bangalore Tech Corporate Network • Executive Leadership Sessions",
+    batch: "July 2026 Batch Open",
+  },
+  {
+    id: "kurukshetra",
+    name: "Kurukshetra University Online (KUK)",
+    logo: kurukshetraLogo,
+    naac: "NAAC A++",
+    approvals: ["UGC-DEB", "Category-I State Govt. University"],
+    programs: ["Online MBA", "Online MCA", "Online MA", "Online M.Com"],
+    highlights: "Prestigious Govt. Degree • Low Fee Structure • Recognized Worldwide",
+    batch: "July 2026 Batch Open",
   },
 ];
 
@@ -318,16 +438,16 @@ function Index() {
                   <span>UGC-Entitled & NAAC A++ Online Universities</span>
                 </div>
 
-                <h1 className="mt-4 sm:mt-5 text-3xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl sm:leading-[1.15]">
+                <h1 className="mt-4 sm:mt-5 text-3xl font-black tracking-tight text-foreground sm:text-5xl lg:text-6xl sm:leading-[1.15]">
                   Direct Admission in{" "}
                   <span className="bg-gradient-to-r from-primary via-emerald-600 to-teal-500 bg-clip-text text-transparent">
                     Top Online Universities
                   </span>
                 </h1>
 
-                <p className="mt-4 sm:mt-6 max-w-2xl text-sm sm:text-base text-muted-foreground leading-relaxed">
+                <p className="mt-4 sm:mt-6 max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed">
                   Career4s simplifies your online university admission journey. Get free profile evaluation, instant eligibility verification, document approval, and direct enrolment guidance with{" "}
-                  <strong className="font-semibold text-foreground">zero consultation charges</strong>.
+                  <strong className="font-bold text-foreground">zero consultation charges</strong>.
                 </p>
 
                 {/* Trust Points */}
@@ -338,8 +458,8 @@ function Index() {
                     "24,500+ Admitted",
                     "Direct LMS Onboarding",
                   ].map((benefit) => (
-                    <div key={benefit} className="flex items-center gap-1.5 text-xs font-semibold text-foreground/90">
-                      <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-primary" />
+                    <div key={benefit} className="flex items-center gap-1.5 text-xs sm:text-sm font-bold text-foreground">
+                      <CheckCircle2 className="h-4 w-4 shrink-0 text-primary" />
                       <span className="truncate">{benefit}</span>
                     </div>
                   ))}
@@ -439,102 +559,387 @@ function Index() {
           </div>
         </section>
 
-        {/* 4. STATS COUNTER STRIP */}
-        <section className="border-y border-border bg-card/60 py-8 sm:py-10">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 gap-4 sm:gap-6 sm:grid-cols-4">
-              {[
-                { value: "24,500+", label: "Students Admitted", sub: "Guided into Online Degrees" },
-                { value: "60+", label: "Accredited Universities", sub: "UGC-DEB & NAAC A++" },
-                { value: "100%", label: "Free Counselling", sub: "Zero Platform or Agent Fees" },
-                { value: "98.8%", label: "Admission Success", sub: "End-to-End Documentation" },
-              ].map((stat, idx) => (
-                <div key={idx} className="text-center p-2">
-                  <div className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-primary">
-                    {stat.value}
+        {/* 4. AUTO-SLIDING INFINITE MARQUEE — CLEAN LOGOS ONLY, NO BOXES */}
+        <section className="relative border-y border-border/60 bg-white/60 dark:bg-card/60 py-6 sm:py-9 overflow-hidden">
+          {/* Soft gradient edge fades */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 sm:w-36 bg-gradient-to-r from-white via-white/80 to-transparent dark:from-background dark:via-background/80" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 sm:w-36 bg-gradient-to-l from-white via-white/80 to-transparent dark:from-background dark:via-background/80" />
+
+          <div className="animate-marquee flex items-center gap-12 sm:gap-20">
+            {[...universityLogos, ...universityLogos, ...universityLogos].map((uni, idx) => (
+              <button
+                key={`${uni.id}-${idx}`}
+                title={uni.name}
+                onClick={() => handleOpenModal(`Direct Admission Guidance for ${uni.name}`)}
+                className="shrink-0 transition-all duration-300 hover:scale-110 focus:outline-none"
+              >
+                {"image" in uni && uni.image ? (
+                  <img
+                    src={uni.image}
+                    alt={uni.name}
+                    className="h-10 sm:h-14 w-auto max-w-[140px] sm:max-w-[180px] object-contain"
+                  />
+                ) : (
+                  uni.svg
+                )}
+              </button>
+            ))}
+          </div>
+        </section>
+
+        {/* 5. WHERE YOUR DEGREE CAN TAKE YOU — COMPANY LOGOS */}
+        <section className="relative overflow-hidden border-b border-border bg-gradient-to-br from-slate-950 via-slate-900 to-primary/20 py-12 sm:py-16" id="careers">
+          {/* Decorative background glow */}
+          <div className="pointer-events-none absolute inset-0">
+            <div className="absolute left-1/4 top-0 h-64 w-64 rounded-full bg-primary/10 blur-3xl" />
+            <div className="absolute right-1/4 bottom-0 h-64 w-64 rounded-full bg-emerald-500/10 blur-3xl" />
+          </div>
+
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            {/* Heading */}
+            <div className="text-center mb-8 sm:mb-10">
+              <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs sm:text-sm font-extrabold uppercase tracking-widest text-primary">
+                🎯 Career Outcomes
+              </span>
+              <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">
+                Where Your Degree Can Take You
+              </h2>
+              <p className="mt-2 text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
+                Our graduates are placed in India's top companies across sectors. Your online degree opens real doors.
+              </p>
+            </div>
+
+            {/* Company Logos Grid from uploaded image */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 mx-auto max-w-3xl">
+              <img
+                src="/assets/company-logos.png"
+                alt="Top companies where Career4s graduates are placed — Google, Amazon, Dell, HCL, Cognizant, Zomato, Flipkart and more"
+                className="w-full h-auto object-contain"
+                loading="lazy"
+              />
+              {/* Subtle overlay to blend with dark bg */}
+              <div className="absolute inset-0 rounded-2xl ring-1 ring-white/10 pointer-events-none" />
+            </div>
+
+            {/* CTA below */}
+            <div className="mt-8 text-center">
+              <p className="text-xs text-slate-400 mb-3">Join 24,500+ students already placed in top companies</p>
+              <button
+                onClick={() => {
+                  const el = document.getElementById("eligibility");
+                  el?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-2.5 text-sm font-bold text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:scale-105 active:scale-95"
+              >
+                Check Your Eligibility Now
+                <ChevronRight className="h-4 w-4" />
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* 6. 4.8/5 GOOGLE RATING & REVIEWS CTA BANNER (JUST AFTER CAREER OUTCOMES) */}
+        <section className="relative overflow-hidden border-b border-border bg-gradient-to-b from-card via-surface to-background px-4 sm:px-6 lg:px-8 py-12 sm:py-16" id="reviews">
+          <div className="mx-auto max-w-7xl">
+            {/* Google Rating Header Strip */}
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 rounded-2xl border border-border/80 bg-card p-5 sm:p-6 shadow-md mb-8 sm:mb-10">
+              <div className="flex items-center gap-3 sm:gap-4">
+                {/* Google Multi-Color G Icon */}
+                <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-white shadow-sm border border-slate-100">
+                  <svg viewBox="0 0 24 24" className="h-7 w-7 sm:h-8 sm:w-8" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
+                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
+                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05" />
+                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335" />
+                  </svg>
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xl sm:text-2xl font-black text-foreground">4.8</span>
+                    <div className="flex items-center text-amber-400">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-4 w-4 sm:h-5 sm:w-5 fill-amber-400 text-amber-400" />
+                      ))}
+                    </div>
                   </div>
-                  <div className="mt-1 text-xs sm:text-sm font-bold text-foreground">{stat.label}</div>
-                  <div className="text-[10px] sm:text-xs text-muted-foreground">{stat.sub}</div>
+                  <p className="text-xs sm:text-sm font-semibold text-muted-foreground">
+                    Rated <strong className="text-foreground">4.8 / 5</strong> on Google Reviews • 1,200+ Verified Students
+                  </p>
+                </div>
+              </div>
+
+              <button
+                onClick={() => handleOpenModal("Book Free Admission Counselling")}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-bold text-primary-foreground shadow-md transition-all hover:bg-primary/90 hover:scale-105 active:scale-95 shrink-0"
+              >
+                <span>Get Free Admission Help</span>
+                <ArrowRight className="h-4 w-4" />
+              </button>
+            </div>
+
+            {/* 3 Real Google Review Cards */}
+            <div className="grid gap-5 sm:gap-6 md:grid-cols-3">
+              {/* Review 1: Vidhi Choudhary */}
+              <div className="flex flex-col justify-between rounded-2xl border border-border/80 bg-slate-900 text-slate-100 p-5 sm:p-6 shadow-xl transition-transform hover:-translate-y-1">
+                <div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-pink-600 font-bold text-white shadow-sm">
+                        V
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-bold text-white">Vidhi Choudhary</h4>
+                        <span className="text-[11px] text-slate-400">1 review</span>
+                      </div>
+                    </div>
+                    <span className="text-slate-500 hover:text-slate-300">⋮</span>
+                  </div>
+
+                  <div className="mt-3 flex items-center gap-2">
+                    <div className="flex items-center text-amber-400">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+                      ))}
+                    </div>
+                    <span className="text-[11px] text-slate-400">8 months ago</span>
+                  </div>
+
+                  <p className="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                    "My journey with Career4s has been wonderful. I was confused after 12th and had no idea which course to choose. The counsellors patiently understood my interests and guided me toward the right stream. They supported me from the first counselling session to final admission. Thank you Career4s for helping me build my future."
+                  </p>
+                </div>
+
+                <div className="mt-4 pt-3 border-t border-slate-800 flex items-center gap-3 text-xs text-slate-400">
+                  <span className="inline-flex items-center gap-1 text-pink-400">
+                    ❤️ 1
+                  </span>
+                </div>
+              </div>
+
+              {/* Review 2: Manish Jangid */}
+              <div className="flex flex-col justify-between rounded-2xl border border-border/80 bg-slate-900 text-slate-100 p-5 sm:p-6 shadow-xl transition-transform hover:-translate-y-1">
+                <div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-600 font-bold text-white shadow-sm">
+                        M
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-bold text-white">Manish Jangid</h4>
+                        <span className="text-[11px] text-slate-400">2 reviews</span>
+                      </div>
+                    </div>
+                    <span className="text-slate-500 hover:text-slate-300">⋮</span>
+                  </div>
+
+                  <div className="mt-3 flex items-center gap-2">
+                    <div className="flex items-center text-amber-400">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+                      ))}
+                    </div>
+                    <span className="text-[11px] text-slate-400">8 months ago</span>
+                  </div>
+
+                  <p className="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                    "Career4s offers excellent career counselling and admission support. Their team is knowledgeable, transparent and always available to help. A great platform for students planning for higher studies in India or abroad."
+                  </p>
+                </div>
+
+                <div className="mt-4 pt-3 border-t border-slate-800 flex items-center gap-3 text-xs text-slate-400">
+                  <span className="inline-flex items-center gap-1 text-pink-400">
+                    ❤️ 1
+                  </span>
+                </div>
+              </div>
+
+              {/* Review 3: Vansh Saini */}
+              <div className="flex flex-col justify-between rounded-2xl border border-border/80 bg-slate-900 text-slate-100 p-5 sm:p-6 shadow-xl transition-transform hover:-translate-y-1">
+                <div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 font-bold text-white shadow-sm">
+                        V
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-bold text-white">Vansh Saini</h4>
+                        <span className="text-[11px] text-slate-400">3 reviews</span>
+                      </div>
+                    </div>
+                    <span className="text-slate-500 hover:text-slate-300">⋮</span>
+                  </div>
+
+                  <div className="mt-3 flex items-center gap-2">
+                    <div className="flex items-center text-amber-400">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+                      ))}
+                    </div>
+                    <span className="text-[11px] text-slate-400">9 months ago</span>
+                  </div>
+
+                  <p className="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                    "I got admission in mbbs Georgia 🇬🇪. The team is very professional and humble. Thanks vipul sir..."
+                  </p>
+                </div>
+
+                <div className="mt-4 pt-3 border-t border-slate-800 flex items-center gap-3 text-xs text-slate-400">
+                  <span className="inline-flex items-center gap-1 text-pink-400">
+                    ❤️ 1
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom High-Converting CTA Strip */}
+            <div className="mt-8 sm:mt-10 rounded-2xl bg-gradient-to-r from-primary via-emerald-600 to-teal-600 p-6 sm:p-8 text-white shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+              <div>
+                <div className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-3 py-1 text-xs font-bold text-white backdrop-blur-sm">
+                  <Sparkles className="h-3.5 w-3.5" /> 100% Free Consultation
+                </div>
+                <h3 className="mt-2 text-xl sm:text-2xl font-black tracking-tight">
+                  Take the First Step Towards Your Online Degree
+                </h3>
+                <p className="mt-1 text-xs sm:text-sm text-white/90 max-w-xl">
+                  Talk to our certified admission counsellors to verify your eligibility and secure admission in top UGC-entitled universities.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+                <a
+                  href="tel:+919876543210"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-white/15 px-5 py-3 text-xs sm:text-sm font-bold text-white border border-white/30 backdrop-blur-sm hover:bg-white/25 transition-all"
+                >
+                  <PhoneCall className="h-4 w-4" />
+                  <span>1800-890-4422</span>
+                </a>
+                <button
+                  onClick={() => handleOpenModal("Claim Direct Admission Guidance")}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-xs sm:text-sm font-bold text-primary shadow-lg hover:bg-white/90 hover:scale-105 active:scale-95 transition-all"
+                >
+                  <span>Apply for Admission Now</span>
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 7. TOP 8 ACCREDITED ONLINE UNIVERSITIES WITH APPLY NOW CARDS */}
+        <section className="px-4 sm:px-6 lg:px-8 py-14 sm:py-20 bg-surface/50" id="universities">
+          <div className="mx-auto max-w-7xl">
+            <div className="text-center">
+              <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-extrabold uppercase tracking-wider text-primary">
+                <Building2 className="h-4 w-4" /> Top Accredited Institutions
+              </span>
+              <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-foreground">
+                Apply for Admission in Top Online Universities
+              </h2>
+              <p className="mx-auto mt-2 max-w-2xl text-sm sm:text-base text-muted-foreground leading-relaxed">
+                Choose from India's premier UGC-DEB entitled and NAAC A++/A+ accredited universities offering high-flexibility online degree programs.
+              </p>
+            </div>
+
+            <div className="mt-8 sm:mt-12 grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {topUniversities.map((uni) => (
+                <div
+                  key={uni.id}
+                  className="group flex flex-col justify-between rounded-2xl border border-border/80 bg-card p-5 shadow-sm transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:-translate-y-1.5"
+                >
+                  <div>
+                    {/* Card Top: Logo & NAAC Badge */}
+                    <div className="flex items-center justify-between gap-2 border-b border-border/60 pb-4">
+                      <div className="flex h-12 w-28 sm:h-14 sm:w-32 items-center justify-start">
+                        <img
+                          src={uni.logo}
+                          alt={uni.name}
+                          className="max-h-12 w-auto max-w-full object-contain"
+                        />
+                      </div>
+                      <span className="shrink-0 rounded-full bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-0.5 text-[10px] font-extrabold text-emerald-600 dark:text-emerald-400">
+                        {uni.naac}
+                      </span>
+                    </div>
+
+                    {/* University Name */}
+                    <h3 className="mt-3.5 text-sm sm:text-base font-bold text-foreground group-hover:text-primary transition-colors">
+                      {uni.name}
+                    </h3>
+
+                    {/* Approvals Tags */}
+                    <div className="mt-2 flex flex-wrap gap-1.5">
+                      {uni.approvals.map((app) => (
+                        <span
+                          key={app}
+                          className="rounded-md bg-surface border border-border px-2 py-0.5 text-[10px] font-semibold text-muted-foreground"
+                        >
+                          ✓ {app}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Popular Programs */}
+                    <div className="mt-3.5 pt-3 border-t border-border/60">
+                      <div className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                        Popular Degrees:
+                      </div>
+                      <div className="mt-1.5 flex flex-wrap gap-1">
+                        {uni.programs.map((prog) => (
+                          <span
+                            key={prog}
+                            className="rounded-lg bg-primary-soft text-primary px-2 py-0.5 text-[10px] font-bold"
+                          >
+                            {prog}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Highlight */}
+                    <p className="mt-3 text-[11px] text-muted-foreground leading-relaxed">
+                      💡 {uni.highlights}
+                    </p>
+                  </div>
+
+                  {/* Card Bottom: Batch Status & Apply Now Button */}
+                  <div className="mt-4 pt-3.5 border-t border-border/60">
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <span className="flex items-center gap-1.5 text-[10px] font-bold text-emerald-600 dark:text-emerald-400">
+                        <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                        {uni.batch}
+                      </span>
+                      <span className="text-[10px] font-medium text-muted-foreground">
+                        100% Free Guidance
+                      </span>
+                    </div>
+
+                    <button
+                      onClick={() => handleOpenModal(`Direct Admission Application for ${uni.name}`)}
+                      className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-primary py-2.5 px-4 text-xs font-bold text-primary-foreground shadow-sm transition-all hover:bg-primary/90 hover:shadow-md active:scale-95 group-hover:scale-[1.02]"
+                    >
+                      <span>Apply Now</span>
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* 5. ADMISSION PROCESS & STEPS */}
-        <section className="px-4 sm:px-6 lg:px-8 py-14 sm:py-20" id="process">
-          <div className="mx-auto max-w-7xl">
-            <div className="grid items-center gap-8 lg:gap-12 lg:grid-cols-12">
-              <div className="relative lg:col-span-5 order-2 lg:order-1">
-                <div className="overflow-hidden rounded-2xl sm:rounded-3xl border border-border shadow-xl sm:shadow-2xl">
-                  <img
-                    src={admissionImage}
-                    alt="Admission guidance and counselling at Career4s"
-                    width={1000}
-                    height={800}
-                    loading="lazy"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div className="glass-card absolute -bottom-3 right-3 sm:-bottom-5 sm:right-5 rounded-xl sm:rounded-2xl border border-border p-3 sm:p-4 shadow-xl">
-                  <div className="flex items-center gap-2.5 sm:gap-3">
-                    <div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-lg sm:rounded-xl bg-primary text-primary-foreground">
-                      <Headphones className="h-4 w-4 sm:h-5 sm:w-5" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-foreground">Official Admission Desk</div>
-                      <div className="text-[10px] sm:text-[11px] text-muted-foreground">Direct LMS & Enrolment Setup</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="lg:col-span-7 order-1 lg:order-2">
-                <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-primary">
-                  <FileCheck className="h-4 w-4" /> Seamless Admission Flow
-                </span>
-                <h2 className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground">
-                  Four Simple Steps to Secure Your Online University Admission
-                </h2>
-                <p className="mt-2.5 sm:mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                  We eliminate admission stress with fast-track profile verification, scholarship assistance, and direct enrolment access.
-                </p>
-
-                <div className="mt-6 sm:mt-8 space-y-3.5 sm:space-y-5">
-                  {admissionSteps.map((step) => {
-                    return (
-                      <div
-                        key={step.n}
-                        className="group flex items-start gap-3 sm:gap-4 rounded-xl sm:rounded-2xl border border-border/80 bg-card p-3.5 sm:p-4 shadow-sm transition-all hover:border-primary/40 hover:shadow-md"
-                      >
-                        <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-primary-soft text-primary font-black text-xs sm:text-sm group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                          {step.n}
-                        </div>
-                        <div>
-                          <h3 className="text-xs sm:text-sm font-bold text-foreground">{step.t}</h3>
-                          <p className="mt-0.5 sm:mt-1 text-[11px] sm:text-xs text-muted-foreground leading-relaxed">{step.d}</p>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 6. INTERACTIVE ELIGIBILITY CHECKER */}
+        {/* 8. INTERACTIVE ELIGIBILITY CHECKER */}
         <section className="bg-surface/70 px-4 sm:px-6 lg:px-8 py-14 sm:py-20" id="eligibility">
           <div className="mx-auto max-w-4xl">
             <div className="rounded-2xl sm:rounded-3xl border border-border/80 bg-card p-5 sm:p-8 lg:p-10 shadow-xl sm:shadow-2xl">
               <div className="text-center">
-                <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-primary">
+                <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-extrabold uppercase tracking-wider text-primary">
                   <ClipboardList className="h-4 w-4" /> Instant Profile Assessment
                 </span>
-                <h2 className="mt-2 text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-foreground">
+                <h2 className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-foreground">
                   Online University Admission Eligibility Checker
                 </h2>
-                <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm text-muted-foreground">
+                <p className="mt-1.5 sm:mt-2 text-sm sm:text-base text-muted-foreground leading-relaxed">
                   Check if you qualify for direct admission into UGC-entitled online undergraduate or postgraduate degree programs.
                 </p>
               </div>
@@ -616,17 +1021,18 @@ function Index() {
           </div>
         </section>
 
-        {/* 7. WHY CAREER4S FOR ADMISSIONS (BENEFITS) */}
+        {/* 9. WHY CAREER4S FOR ADMISSIONS (COMMENTED OUT AS REQUESTED) */}
+        {/*
         <section className="px-4 sm:px-6 lg:px-8 py-14 sm:py-20" id="benefits">
           <div className="mx-auto max-w-7xl">
             <div className="text-center">
-              <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-primary">
+              <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-extrabold uppercase tracking-wider text-primary">
                 <ShieldCheck className="h-4 w-4" /> Trusted Admissions Partner
               </span>
-              <h2 className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground">
+              <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-foreground">
                 Why Students Trust Career4s for Online Admissions
               </h2>
-              <p className="mx-auto mt-2 max-w-xl text-xs sm:text-sm text-muted-foreground">
+              <p className="mx-auto mt-2 max-w-xl text-sm sm:text-base text-muted-foreground leading-relaxed">
                 We safeguard your academic future with accredited university admissions and end-to-end student support.
               </p>
             </div>
@@ -652,38 +1058,39 @@ function Index() {
             </div>
           </div>
         </section>
+        */}
       </main>
 
-      {/* 8. COMPREHENSIVE MULTI-COLUMN ENTERPRISE FOOTER */}
-      <footer className="border-t border-border bg-card text-foreground" id="footer">
-        {/* Top Newsletter / Quick Alert Subscription */}
-        <div className="border-b border-border px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+      {/* 10. COMPREHENSIVE SLEEK DARK ENTERPRISE FOOTER */}
+      <footer className="border-t border-slate-800 bg-slate-950 text-slate-200" id="footer">
+        {/* Top Newsletter / Quick Alert Subscription in Dark Theme */}
+        <div className="border-b border-slate-800/80 px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
           <div className="mx-auto max-w-7xl">
-            <div className="flex flex-col items-center justify-between gap-5 sm:gap-6 rounded-2xl bg-surface p-5 sm:p-8 md:flex-row md:p-10">
+            <div className="flex flex-col items-center justify-between gap-6 rounded-3xl bg-gradient-to-r from-slate-900 via-slate-900 to-emerald-950/40 p-6 sm:p-8 md:flex-row md:p-10 border border-slate-800 shadow-2xl">
               <div className="text-center md:text-left">
-                <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-primary">
-                  <Sparkles className="h-4 w-4" /> Admission Notifications
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 px-3 py-1 text-xs font-extrabold uppercase tracking-wider text-emerald-400">
+                  <Sparkles className="h-3.5 w-3.5" /> Admission Notifications
                 </span>
-                <h3 className="mt-1 text-lg sm:text-xl font-bold tracking-tight text-foreground sm:text-2xl">
+                <h3 className="mt-2 text-xl sm:text-2xl lg:text-3xl font-black tracking-tight text-white">
                   Subscribe to University Admission & Deadline Alerts
                 </h3>
-                <p className="mt-1 text-xs text-muted-foreground">
-                  Get updates on university application windows, merit scholarship deadlines, and UGC guidelines.
+                <p className="mt-1 text-xs sm:text-sm text-slate-400 max-w-xl">
+                  Get instant updates on admission portal deadlines, merit scholarship concessions, and UGC-DEB circulars.
                 </p>
               </div>
 
-              <form onSubmit={handleNewsletterSubmit} className="flex w-full max-w-md flex-col sm:flex-row gap-2">
+              <form onSubmit={handleNewsletterSubmit} className="flex w-full max-w-md flex-col sm:flex-row gap-2.5">
                 <input
                   type="email"
                   required
                   placeholder="Enter your email address"
                   value={newsletterEmail}
                   onChange={(e) => setNewsletterEmail(e.target.value)}
-                  className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-xs outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  className="w-full rounded-xl border border-slate-700 bg-slate-900/90 px-4 py-3 text-xs sm:text-sm text-white placeholder-slate-500 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                 />
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center gap-1.5 shrink-0 rounded-xl bg-primary px-5 py-2.5 text-xs font-bold text-primary-foreground transition-all hover:bg-primary/90"
+                  className="inline-flex items-center justify-center gap-1.5 shrink-0 rounded-xl bg-primary px-6 py-3 text-xs sm:text-sm font-bold text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:scale-105 active:scale-95"
                 >
                   <span>Subscribe</span>
                   <Send className="h-3.5 w-3.5" />
@@ -693,41 +1100,41 @@ function Index() {
           </div>
         </div>
 
-        {/* Main Footer Links Columns */}
+        {/* Main 4-Column Footer */}
         <div className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="mx-auto max-w-7xl">
-            <div className="grid gap-8 sm:gap-10 sm:grid-cols-2">
+            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
               {/* Col 1: Brand & Approvals */}
               <div className="space-y-4">
-                <a href="/" className="flex items-center gap-2">
-                  <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-sm">
-                    <GraduationCap className="h-5 w-5 sm:h-6 sm:w-6" />
+                <a href="/" className="flex items-center gap-2.5">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-lg">
+                    <GraduationCap className="h-6 w-6" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-lg sm:text-xl font-extrabold tracking-tight text-foreground">
+                    <span className="text-xl font-black tracking-tight text-white">
                       Career<span className="text-primary">4s</span>
                     </span>
-                    <span className="text-[9px] sm:text-[10px] font-medium tracking-wider uppercase text-muted-foreground">
-                      Online University Admissions
+                    <span className="text-[10px] font-bold tracking-wider uppercase text-slate-400">
+                      University Admissions
                     </span>
                   </div>
                 </a>
 
-                <p className="text-xs leading-relaxed text-muted-foreground max-w-md">
-                  Career4s is India's premier admission guidance platform facilitating online university enrolment into UGC-DEB entitled and NAAC accredited institutions for students and working professionals.
+                <p className="text-xs leading-relaxed text-slate-400">
+                  Career4s is India's leading admission counselling platform facilitating direct enrolment into UGC-DEB entitled and NAAC accredited online universities for students and working professionals.
                 </p>
 
                 {/* Trust Badges */}
-                <div className="pt-1">
-                  <div className="text-[11px] font-bold uppercase tracking-wider text-foreground">
+                <div className="pt-2">
+                  <div className="text-[11px] font-black uppercase tracking-wider text-slate-300">
                     Accredited Recognitions
                   </div>
-                  <div className="mt-2 flex flex-wrap gap-2">
+                  <div className="mt-2.5 flex flex-wrap gap-1.5">
                     {["UGC-DEB Entitled", "AICTE Approved", "NAAC A++", "AIU Recognized", "WES Accepted"].map(
                       (b) => (
                         <span
                           key={b}
-                          className="rounded-md border border-border bg-surface px-2.5 py-1 text-[10px] font-semibold text-muted-foreground"
+                          className="rounded-md border border-slate-800 bg-slate-900 px-2.5 py-1 text-[10px] font-bold text-emerald-400 shadow-sm"
                         >
                           ✓ {b}
                         </span>
@@ -737,95 +1144,166 @@ function Index() {
                 </div>
               </div>
 
-              {/* Col 2: Admission Resources */}
+              {/* Col 2: Top Degrees */}
               <div>
-                <h4 className="text-xs font-extrabold uppercase tracking-wider text-foreground">
-                  Admission Resources
+                <h4 className="text-xs font-black uppercase tracking-wider text-white">
+                  Popular Online Degrees
                 </h4>
-                <ul className="mt-3.5 space-y-2.5 text-xs text-muted-foreground">
+                <ul className="mt-4 space-y-2.5 text-xs text-slate-400 font-medium">
+                  {["Online MBA Admissions", "Online MCA Admissions", "Online BBA / BCA", "Online M.Sc Data Science", "Online M.Com / B.Com", "Executive PG Diplomas"].map((deg) => (
+                    <li key={deg}>
+                      <button
+                        onClick={() => handleOpenModal(`Apply for ${deg}`)}
+                        className="transition-colors hover:text-emerald-400 text-left flex items-center gap-1.5"
+                      >
+                        <ChevronRight className="h-3 w-3 text-emerald-500" />
+                        <span>{deg}</span>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Col 3: Student Resources */}
+              <div>
+                <h4 className="text-xs font-black uppercase tracking-wider text-white">
+                  Quick Navigation
+                </h4>
+                <ul className="mt-4 space-y-2.5 text-xs text-slate-400 font-medium">
                   <li>
-                    <a href="#eligibility" className="transition-colors hover:text-primary">
-                      Profile & Eligibility Checker
+                    <a href="#universities" className="transition-colors hover:text-emerald-400 flex items-center gap-1.5">
+                      <ChevronRight className="h-3 w-3 text-emerald-500" />
+                      <span>Top 8 Online Universities</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#process" className="transition-colors hover:text-primary">
-                      4-Step Admission Journey
+                    <a href="#reviews" className="transition-colors hover:text-emerald-400 flex items-center gap-1.5">
+                      <ChevronRight className="h-3 w-3 text-emerald-500" />
+                      <span>Google Reviews (4.8★ Rating)</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#benefits" className="transition-colors hover:text-primary">
-                      Why Choose Career4s
+                    <a href="#careers" className="transition-colors hover:text-emerald-400 flex items-center gap-1.5">
+                      <ChevronRight className="h-3 w-3 text-emerald-500" />
+                      <span>Where Your Degree Takes You</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#eligibility" className="transition-colors hover:text-emerald-400 flex items-center gap-1.5">
+                      <ChevronRight className="h-3 w-3 text-emerald-500" />
+                      <span>Profile Eligibility Checker</span>
                     </a>
                   </li>
                   <li>
                     <button
                       onClick={() => handleOpenModal("Check Required Admission Documents")}
-                      className="transition-colors hover:text-primary text-left"
+                      className="transition-colors hover:text-emerald-400 text-left flex items-center gap-1.5"
                     >
-                      Document Checklist Guide
+                      <ChevronRight className="h-3 w-3 text-emerald-500" />
+                      <span>Document Checklist Guide</span>
                     </button>
                   </li>
                   <li>
                     <button
                       onClick={() => handleOpenModal("Apply for Merit Scholarship")}
-                      className="transition-colors hover:text-primary text-left"
+                      className="transition-colors hover:text-emerald-400 text-left flex items-center gap-1.5"
                     >
-                      Scholarship & Waiver Desk
+                      <ChevronRight className="h-3 w-3 text-emerald-500" />
+                      <span>Scholarship & Fee Waiver Desk</span>
                     </button>
                   </li>
                 </ul>
+              </div>
+
+              {/* Col 4: Admission Helpline & Support */}
+              <div className="space-y-4">
+                <h4 className="text-xs font-black uppercase tracking-wider text-white">
+                  Official Admission Desk
+                </h4>
+                <div className="rounded-2xl border border-slate-800 bg-slate-900/90 p-4 space-y-3 shadow-inner">
+                  <div className="flex items-center gap-2 text-xs font-bold text-emerald-400">
+                    <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <span>Admissions Open for July 2026</span>
+                  </div>
+                  
+                  <div className="space-y-2 text-xs text-slate-300">
+                    <div className="flex items-center gap-2">
+                      <PhoneCall className="h-4 w-4 text-emerald-400 shrink-0" />
+                      <div>
+                        <div className="text-[10px] text-slate-400">Toll-Free Helpline</div>
+                        <a href="tel:+919876543210" className="font-bold text-white hover:text-emerald-400">
+                          1800-890-4422
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-2 pt-1">
+                      <Headphones className="h-4 w-4 text-emerald-400 shrink-0" />
+                      <div>
+                        <div className="text-[10px] text-slate-400">Support Hours</div>
+                        <div className="font-medium text-slate-300">Mon - Sat: 9 AM - 8 PM IST</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button
+                    onClick={() => handleOpenModal("Connect with Admission Advisor")}
+                    className="w-full rounded-xl bg-primary py-2.5 text-xs font-bold text-primary-foreground shadow-md transition-all hover:bg-primary/90"
+                  >
+                    Talk to Admission Advisor
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Legal & Copyright Bar */}
-        <div className="border-t border-border bg-surface/60 px-4 sm:px-6 lg:px-8 py-6 text-xs text-muted-foreground">
+        <div className="border-t border-slate-900 bg-slate-950 px-4 sm:px-6 lg:px-8 py-6 text-xs text-slate-500">
           <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
             <div>
-              <p>
+              <p className="font-semibold text-slate-400">
                 © {new Date().getFullYear()} Career4s Education Services Pvt. Ltd. All rights reserved.
               </p>
-              <p className="mt-1 text-[10px] sm:text-[11px] text-muted-foreground/80">
-                Disclaimer: Career4s is an independent education guidance and digital admissions enablement portal facilitating admissions into accredited online universities.
+              <p className="mt-1 text-[10px] text-slate-500">
+                Disclaimer: Career4s is an authorized admission counselling and academic guidance platform assisting students with enrolment into UGC-DEB entitled online universities.
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-[10px] sm:text-[11px] font-medium">
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-[11px] font-semibold text-slate-400">
               <button
-                onClick={() => toast.info("Privacy Policy: Your student data is 100% encrypted & never sold.")}
-                className="hover:text-primary"
+                onClick={() => toast.info("Privacy Policy: Your student data is 100% encrypted & strictly confidential.")}
+                className="hover:text-emerald-400 transition-colors"
               >
                 Privacy Policy
               </button>
               <span>•</span>
               <button
                 onClick={() => toast.info("Terms: 100% free and transparent admission assistance for students.")}
-                className="hover:text-primary"
+                className="hover:text-emerald-400 transition-colors"
               >
                 Terms of Service
               </button>
               <span>•</span>
               <button
                 onClick={() => toast.info("Grievance Redressal: grievance@career4s.com")}
-                className="hover:text-primary"
+                className="hover:text-emerald-400 transition-colors"
               >
                 Grievance Cell
               </button>
               <span>•</span>
               <button
-                onClick={() => toast.info("Refunds: Managed directly per official university admission policies.")}
-                className="hover:text-primary"
+                onClick={() => toast.info("Accreditations: All universities are UGC-DEB and NAAC approved.")}
+                className="hover:text-emerald-400 transition-colors"
               >
-                Refund Policy
+                Accreditations
               </button>
             </div>
           </div>
         </div>
       </footer>
 
-      {/* 9. FLOATING QUICK-ACTION / WHATSAPP & EXPERT WIDGET */}
+      {/* 10. FLOATING QUICK-ACTION / WHATSAPP & EXPERT WIDGET */}
       <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 flex flex-col items-end gap-3">
         <button
           onClick={() => handleOpenModal("Chat with Admission Counsellor")}
@@ -840,7 +1318,7 @@ function Index() {
         </button>
       </div>
 
-      {/* 10. INTERACTIVE FREE ADMISSION COUNSELLING MODAL */}
+      {/* 11. INTERACTIVE FREE ADMISSION COUNSELLING MODAL */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-3 sm:p-4 backdrop-blur-sm animate-in fade-in duration-200">
           <div className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl sm:rounded-3xl border border-border bg-card p-5 sm:p-8 shadow-2xl">
