@@ -35,6 +35,11 @@ import vitLogo from "@/assets/universities/vit.png";
 import lpuLogo from "@/assets/universities/lpu.png";
 import manipalLogo from "@/assets/universities/manipal.png";
 import chandigarhLogo from "@/assets/universities/chandigarh.png";
+import adtuLogo from "@/assets/universities/adtu.png";
+import christLogo from "@/assets/universities/christ.png";
+import shooliniLogo from "@/assets/universities/shoolini.png";
+import bennettLogo from "@/assets/universities/bennett.png";
+import whatsappIcon from "@/assets/whatsapp-icon.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -61,6 +66,7 @@ const navLinks = [
   { name: "Career Outcomes", href: "#careers" },
   { name: "Reviews", href: "#reviews" },
   { name: "Top Universities", href: "#universities" },
+  { name: "Why Online?", href: "#why-online" },
   { name: "Eligibility Checker", href: "#eligibility" },
 ];
 
@@ -115,6 +121,38 @@ const universityLogos = [
     id: "chandigarh",
     name: "Chandigarh University",
     image: chandigarhLogo,
+  },
+  {
+    id: "upgrad",
+    name: "upGrad",
+    svg: (
+      <svg viewBox="0 0 160 50" className="h-10 sm:h-12 w-auto object-contain" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <text x="5" y="36" fontFamily="system-ui, sans-serif" fontWeight="900" fontSize="34" fill="#EB0029" letterSpacing="-1.5">
+          upGrad
+        </text>
+        <circle cx="132" cy="18" r="4" fill="#EB0029" />
+      </svg>
+    ),
+  },
+  {
+    id: "adtu",
+    name: "Assam Down Town University",
+    image: adtuLogo,
+  },
+  {
+    id: "christ",
+    name: "Christ University",
+    image: christLogo,
+  },
+  {
+    id: "shoolini",
+    name: "Shoolini University",
+    image: shooliniLogo,
+  },
+  {
+    id: "bennett",
+    name: "Bennett University",
+    image: bennettLogo,
   },
 ];
 
@@ -198,6 +236,63 @@ const topUniversities = [
     approvals: ["UGC-DEB", "Category-I State Govt. University"],
     programs: ["Online MBA", "Online MCA", "Online MA", "Online M.Com"],
     highlights: "Prestigious Govt. Degree • Low Fee Structure • Recognized Worldwide",
+    batch: "July 2026 Batch Open",
+  },
+  {
+    id: "upgrad",
+    name: "upGrad Online Programs",
+    svg: (
+      <svg viewBox="0 0 160 50" className="h-10 sm:h-12 w-auto object-contain" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <text x="5" y="36" fontFamily="system-ui, sans-serif" fontWeight="900" fontSize="34" fill="#EB0029" letterSpacing="-1.5">
+          upGrad
+        </text>
+        <circle cx="132" cy="18" r="4" fill="#EB0029" />
+      </svg>
+    ),
+    naac: "UGC Entitled",
+    approvals: ["UGC Entitled", "WES Recognized", "Top Global Faculty"],
+    programs: ["Executive MBA", "M.Sc Data Science", "Global MBA", "AI & ML PG"],
+    highlights: "300+ Industry Mentors • 50,000+ Placed • Top Global University Degree",
+    batch: "July 2026 Batch Open",
+  },
+  {
+    id: "adtu",
+    name: "Assam Down Town University (ADTU)",
+    logo: adtuLogo,
+    naac: "NAAC A",
+    approvals: ["UGC-DEB", "AICTE Approved", "Govt. Recognized"],
+    programs: ["Online MBA", "Online MCA", "Online BBA", "Online BCA"],
+    highlights: "Affordable Fee Structure • State-of-the-Art LMS • Full Placement Support",
+    batch: "July 2026 Batch Open",
+  },
+  {
+    id: "christ",
+    name: "Christ (Deemed to be University) Online",
+    logo: christLogo,
+    naac: "NAAC A+",
+    approvals: ["UGC Entitled", "MHRD Category-I", "NIRF Top 20"],
+    programs: ["Online MBA", "Online BBA", "Online M.Com", "Online PGDM"],
+    highlights: "Prestigious Brand Value • Corporate Mentorship • Rigorous Curriculum",
+    batch: "July 2026 Batch Open",
+  },
+  {
+    id: "shoolini",
+    name: "Shoolini University Online",
+    logo: shooliniLogo,
+    naac: "NAAC A+",
+    approvals: ["UGC-DEB", "QS World Ranked #1", "NIRF Ranked"],
+    programs: ["Online MBA", "Online MCA", "Online BBA", "Online B.Com (Hons)"],
+    highlights: "Top 100 Global Young Universities • 100% Online Exam Mode • Pay After Placement",
+    batch: "July 2026 Batch Open",
+  },
+  {
+    id: "bennett",
+    name: "Bennett University (The Times Group)",
+    logo: bennettLogo,
+    naac: "NAAC A+",
+    approvals: ["UGC Entitled", "Times Group Legacy", "AICTE Approved"],
+    programs: ["Executive MBA", "Online MCA", "Online BBA", "PG in AI & Cloud"],
+    highlights: "Times Group Media & Corporate Network • Silicon Valley Faculty • High ROI",
     batch: "July 2026 Batch Open",
   },
 ];
@@ -560,24 +655,24 @@ function Index() {
         </section>
 
         {/* 4. AUTO-SLIDING INFINITE MARQUEE — CLEAN LOGOS ONLY, NO BOXES */}
-        <section className="relative border-y border-border/60 bg-white/60 dark:bg-card/60 py-6 sm:py-9 overflow-hidden">
+        <section className="relative border-y border-border/60 bg-white/80 dark:bg-card/80 py-8 sm:py-12 md:py-14 overflow-hidden">
           {/* Soft gradient edge fades */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 sm:w-36 bg-gradient-to-r from-white via-white/80 to-transparent dark:from-background dark:via-background/80" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 sm:w-36 bg-gradient-to-l from-white via-white/80 to-transparent dark:from-background dark:via-background/80" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 sm:w-44 bg-gradient-to-r from-background via-background/80 to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 sm:w-44 bg-gradient-to-l from-background via-background/80 to-transparent" />
 
-          <div className="animate-marquee flex items-center gap-12 sm:gap-20">
+          <div className="animate-marquee flex items-center gap-14 sm:gap-24 md:gap-32">
             {[...universityLogos, ...universityLogos, ...universityLogos].map((uni, idx) => (
               <button
                 key={`${uni.id}-${idx}`}
                 title={uni.name}
                 onClick={() => handleOpenModal(`Direct Admission Guidance for ${uni.name}`)}
-                className="shrink-0 transition-all duration-300 hover:scale-110 focus:outline-none"
+                className="shrink-0 flex items-center justify-center transition-all duration-300 hover:scale-115 focus:outline-none"
               >
                 {"image" in uni && uni.image ? (
                   <img
                     src={uni.image}
                     alt={uni.name}
-                    className="h-10 sm:h-14 w-auto max-w-[140px] sm:max-w-[180px] object-contain"
+                    className="h-16 sm:h-24 md:h-28 w-auto max-w-[180px] sm:max-w-[260px] md:max-w-[320px] object-contain drop-shadow-sm"
                   />
                 ) : (
                   uni.svg
@@ -850,12 +945,16 @@ function Index() {
                   <div>
                     {/* Card Top: Logo & NAAC Badge */}
                     <div className="flex items-center justify-between gap-2 border-b border-border/60 pb-4">
-                      <div className="flex h-12 w-28 sm:h-14 sm:w-32 items-center justify-start">
-                        <img
-                          src={uni.logo}
-                          alt={uni.name}
-                          className="max-h-12 w-auto max-w-full object-contain"
-                        />
+                      <div className="flex h-16 w-36 sm:h-20 sm:w-44 items-center justify-start">
+                        {"logo" in uni && uni.logo ? (
+                          <img
+                            src={uni.logo}
+                            alt={uni.name}
+                            className="max-h-16 sm:max-h-20 w-auto max-w-full object-contain"
+                          />
+                        ) : "svg" in uni ? (
+                          uni.svg
+                        ) : null}
                       </div>
                       <span className="shrink-0 rounded-full bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-0.5 text-[10px] font-extrabold text-emerald-600 dark:text-emerald-400">
                         {uni.naac}
@@ -924,6 +1023,183 @@ function Index() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 8. WHY ONLINE DEGREE SECTION */}
+        <section className="relative px-4 sm:px-6 lg:px-8 py-16 sm:py-24 bg-gradient-to-b from-background via-surface/40 to-background border-t border-border/60" id="why-online">
+          <div className="mx-auto max-w-7xl">
+            {/* Header */}
+            <div className="text-center">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs sm:text-sm font-extrabold uppercase tracking-wider text-primary">
+                <Sparkles className="h-4 w-4" /> Future of Higher Education
+              </span>
+              <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-foreground">
+                Why Choose an Online University Degree?
+              </h2>
+              <p className="mx-auto mt-2.5 max-w-3xl text-sm sm:text-base text-muted-foreground leading-relaxed">
+                Online degree programs from UGC-entitled universities offer the exact same academic prestige and legal validity as on-campus degrees — with unmatched flexibility and affordability.
+              </p>
+            </div>
+
+            {/* 6 Core Advantages Grid */}
+            <div className="mt-10 sm:mt-14 grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                {
+                  icon: Award,
+                  color: "from-amber-500/20 to-amber-500/5 text-amber-500 border-amber-500/20",
+                  tag: "UGC Approved",
+                  title: "100% Equal Degree Recognition",
+                  desc: "As per UGC Regulations 2020, online degrees are fully equivalent to regular on-campus degrees. Valid for all Central/State Govt. jobs, UPSC, PSU exams, and international higher education.",
+                },
+                {
+                  icon: Laptop,
+                  color: "from-blue-500/20 to-blue-500/5 text-blue-500 border-blue-500/20",
+                  tag: "Zero Career Break",
+                  title: "Work & Study Simultaneously",
+                  desc: "Keep earning your full-time salary without interruption. Access recorded HD lectures, digital e-libraries, and weekend live interactive sessions 24/7 on your mobile or laptop.",
+                },
+                {
+                  icon: ShieldCheck,
+                  color: "from-emerald-500/20 to-emerald-500/5 text-emerald-500 border-emerald-500/20",
+                  tag: "Save 60-70%",
+                  title: "Cost-Effective with No-Cost EMI",
+                  desc: "Save lakhs on campus fees, hostel rent, food, and daily travel expenses. Benefit from flexible semester-wise fee payments and 0% interest monthly EMI options.",
+                },
+                {
+                  icon: FileCheck,
+                  color: "from-purple-500/20 to-purple-500/5 text-purple-500 border-purple-500/20",
+                  tag: "Convenient",
+                  title: "100% Online Proctored Exams",
+                  desc: "No need to travel to distant examination centers. Give semester assessments and quizzes from the comfort of your home with AI-proctored, flexible weekend exam slot booking.",
+                },
+                {
+                  icon: BadgeCheck,
+                  color: "from-teal-500/20 to-teal-500/5 text-teal-500 border-teal-500/20",
+                  tag: "Industry Leaders",
+                  title: "Top Faculty & Global Curriculum",
+                  desc: "Learn directly from distinguished NAAC A++ university professors, CXOs, and Silicon Valley industry experts with practical case studies and modern industry-aligned curriculum.",
+                },
+                {
+                  icon: UserCheck,
+                  color: "from-rose-500/20 to-rose-500/5 text-rose-500 border-rose-500/20",
+                  tag: "300+ Recruiters",
+                  title: "Placement Assistance & Mentorship",
+                  desc: "Get dedicated career coaching, mock interview practice, resume building workshops, and exclusive access to university placement drives and global alumni networks.",
+                },
+              ].map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={item.title}
+                    className="group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl border border-border/80 bg-card p-6 shadow-sm transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:-translate-y-1.5"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between">
+                        <div className={`flex h-12 w-12 items-center justify-center rounded-2xl border bg-gradient-to-br ${item.color}`}>
+                          <Icon className="h-6 w-6" />
+                        </div>
+                        <span className="rounded-full bg-surface border border-border px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider text-muted-foreground">
+                          {item.tag}
+                        </span>
+                      </div>
+
+                      <h3 className="mt-4 text-base sm:text-lg font-black text-foreground group-hover:text-primary transition-colors">
+                        {item.title}
+                      </h3>
+
+                      <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Quick Comparison Card: Online vs Regular */}
+            <div className="mt-12 sm:mt-16 rounded-3xl border border-border/90 bg-card p-6 sm:p-10 shadow-xl">
+              <div className="text-center mb-8">
+                <span className="text-xs font-black uppercase tracking-wider text-primary">
+                  Side-by-Side Comparison
+                </span>
+                <h3 className="mt-1.5 text-2xl sm:text-3xl font-black text-foreground">
+                  Online Degree vs. Traditional Regular Degree
+                </h3>
+              </div>
+
+              <div className="overflow-x-auto">
+                <table className="w-full text-left text-xs sm:text-sm">
+                  <thead>
+                    <tr className="border-b border-border text-muted-foreground">
+                      <th className="pb-3 font-extrabold uppercase tracking-wider">Key Parameters</th>
+                      <th className="pb-3 font-extrabold uppercase tracking-wider text-primary">
+                        🎓 Online Degree (UGC-Entitled)
+                      </th>
+                      <th className="pb-3 font-extrabold uppercase tracking-wider text-muted-foreground">
+                        🏫 Regular On-Campus Degree
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-border/60">
+                    <tr>
+                      <td className="py-3.5 font-bold text-foreground">Degree Legal Validity</td>
+                      <td className="py-3.5 font-extrabold text-emerald-600 dark:text-emerald-400">
+                        ✓ 100% Equivalent per UGC Notification
+                      </td>
+                      <td className="py-3.5 text-muted-foreground">✓ 100% Valid</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3.5 font-bold text-foreground">Work & Earn Simultaneously</td>
+                      <td className="py-3.5 font-extrabold text-emerald-600 dark:text-emerald-400">
+                        ✓ Full Flexibility (No Career Break)
+                      </td>
+                      <td className="py-3.5 text-muted-foreground">✕ Must attend daily campus classes</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3.5 font-bold text-foreground">Total Education Expense</td>
+                      <td className="py-3.5 font-extrabold text-emerald-600 dark:text-emerald-400">
+                        ✓ Up to 70% Lower + No Relocation
+                      </td>
+                      <td className="py-3.5 text-muted-foreground">✕ High (Tuition + Hostel + Commute)</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3.5 font-bold text-foreground">Examination Mode</td>
+                      <td className="py-3.5 font-extrabold text-emerald-600 dark:text-emerald-400">
+                        ✓ 100% Online Remote Proctored
+                      </td>
+                      <td className="py-3.5 text-muted-foreground">✕ Physical exam hall attendance mandatory</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3.5 font-bold text-foreground">Govt. Job & Higher Studies Eligibility</td>
+                      <td className="py-3.5 font-extrabold text-emerald-600 dark:text-emerald-400">
+                        ✓ 100% Eligible (UPSC, SSC, PSU, WES)
+                      </td>
+                      <td className="py-3.5 text-muted-foreground">✓ 100% Eligible</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Bottom Mini CTA */}
+              <div className="mt-8 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+                <div>
+                  <h4 className="text-sm sm:text-base font-extrabold text-foreground">
+                    Confused which online university program fits your career goals?
+                  </h4>
+                  <p className="text-xs text-muted-foreground">
+                    Our certified academic advisors will guide your admission journey for free.
+                  </p>
+                </div>
+                <button
+                  onClick={() => handleOpenModal("Free Online Degree Counselling")}
+                  className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-xs sm:text-sm font-bold text-primary-foreground shadow-md transition-all hover:bg-primary/90 hover:scale-105 active:scale-95 shrink-0"
+                >
+                  <span>Get Free Admission Guidance</span>
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+              </div>
             </div>
           </div>
         </section>
@@ -1303,18 +1579,18 @@ function Index() {
         </div>
       </footer>
 
-      {/* 10. FLOATING QUICK-ACTION / WHATSAPP & EXPERT WIDGET */}
-      <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 flex flex-col items-end gap-3">
+      {/* 10. FLOATING QUICK-ACTION / WHATSAPP WIDGET */}
+      <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50">
         <button
-          onClick={() => handleOpenModal("Chat with Admission Counsellor")}
-          className="group flex items-center gap-2 sm:gap-2.5 rounded-full bg-emerald-600 px-3.5 sm:px-4 py-2.5 sm:py-3 text-xs font-bold text-white shadow-2xl transition-all hover:bg-emerald-700 hover:scale-105 active:scale-95"
+          onClick={() => handleOpenModal("Chat with Admission Counsellor on WhatsApp")}
+          title="Chat with Admission Counsellor on WhatsApp"
+          className="group transition-transform duration-300 hover:scale-115 active:scale-95 focus:outline-none"
         >
-          <span className="relative flex h-2.5 w-2.5 sm:h-3 sm:w-3">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75" />
-            <span className="relative inline-flex rounded-full h-2.5 w-2.5 sm:h-3 sm:w-3 bg-emerald-400" />
-          </span>
-          <MessageCircle className="h-4 w-4" />
-          <span>Talk to Expert</span>
+          <img
+            src={whatsappIcon}
+            alt="WhatsApp Chat"
+            className="h-14 w-14 sm:h-16 sm:w-16 object-contain drop-shadow-2xl transition-transform duration-300 group-hover:rotate-6"
+          />
         </button>
       </div>
 
