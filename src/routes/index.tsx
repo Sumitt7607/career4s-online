@@ -70,6 +70,164 @@ const navLinks = [
   { name: "Eligibility Checker", href: "#eligibility" },
 ];
 
+// SVG Logos for Universities
+const uuSvg = (
+  <svg viewBox="0 0 180 50" className="h-10 sm:h-12 w-auto object-contain" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(4, 5)">
+      <path d="M4 4 L32 4 C32 24 20 36 18 38 C16 36 4 24 4 4 Z" fill="#0F2C59" />
+      <path d="M8 8 L28 8 C28 22 19 32 18 33 C17 32 8 22 8 8 Z" fill="#D4AF37" />
+      <path d="M12 12 L24 12 C24 20 18 27 18 27 C18 27 12 20 12 12 Z" fill="#0F2C59" />
+      <text x="18" y="22" fontFamily="serif" fontWeight="900" fontSize="10" fill="#D4AF37" textAnchor="middle">UU</text>
+    </g>
+    <text x="44" y="24" fontFamily="system-ui, sans-serif" fontWeight="800" fontSize="13" fill="#0F2C59" letterSpacing="-0.2">
+      UTTARANCHAL
+    </text>
+    <text x="44" y="38" fontFamily="system-ui, sans-serif" fontWeight="700" fontSize="10" fill="#D4AF37" letterSpacing="0.8">
+      UNIVERSITY ONLINE
+    </text>
+  </svg>
+);
+
+const smuSvg = (
+  <svg viewBox="0 0 190 50" className="h-10 sm:h-12 w-auto object-contain" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(6, 6)">
+      <circle cx="18" cy="18" r="16" fill="#C82333" />
+      <path d="M18 5 L21 13 L29 11 L24 17 L30 22 L22 23 L24 31 L18 26 L12 31 L14 23 L6 22 L12 17 L7 11 L15 13 Z" fill="#FFA000" />
+      <circle cx="18" cy="18" r="7" fill="#FFFFFF" />
+      <text x="18" y="22" fontFamily="system-ui, sans-serif" fontWeight="900" fontSize="8" fill="#C82333" textAnchor="middle">SMU</text>
+    </g>
+    <text x="46" y="23" fontFamily="system-ui, sans-serif" fontWeight="800" fontSize="12.5" fill="#C82333" letterSpacing="-0.2">
+      SIKKIM MANIPAL
+    </text>
+    <text x="46" y="37" fontFamily="system-ui, sans-serif" fontWeight="700" fontSize="9.5" fill="#333333" letterSpacing="0.5">
+      UNIVERSITY ONLINE
+    </text>
+  </svg>
+);
+
+const upesSvg = (
+  <svg viewBox="0 0 160 50" className="h-10 sm:h-12 w-auto object-contain" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(4, 8)">
+      <rect width="32" height="32" rx="7" fill="#D32F2F" />
+      <path d="M9 11 L15 11 C19 11 22 13 22 17 C22 21 19 23 15 23 L13 23 L13 27 L9 27 Z M13 14 L13 20 L15 20 C17 20 18 19 18 17 C18 15 17 14 15 14 Z" fill="#FFFFFF" />
+    </g>
+    <text x="42" y="26" fontFamily="system-ui, sans-serif" fontWeight="900" fontSize="20" fill="#D32F2F" letterSpacing="-0.5">
+      UPES
+    </text>
+    <text x="43" y="38" fontFamily="system-ui, sans-serif" fontWeight="700" fontSize="9" fill="#1E293B" letterSpacing="1">
+      ONLINE DEGREES
+    </text>
+  </svg>
+);
+
+const dpuSvg = (
+  <svg viewBox="0 0 180 50" className="h-10 sm:h-12 w-auto object-contain" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(6, 6)">
+      <circle cx="18" cy="18" r="16" fill="#7A0C2E" stroke="#CCA43B" strokeWidth="2" />
+      <text x="18" y="23" fontFamily="system-ui, sans-serif" fontWeight="900" fontSize="11" fill="#CCA43B" textAnchor="middle">DPU</text>
+    </g>
+    <text x="46" y="22" fontFamily="system-ui, sans-serif" fontWeight="800" fontSize="12" fill="#7A0C2E" letterSpacing="-0.2">
+      DR. D. Y. PATIL
+    </text>
+    <text x="46" y="36" fontFamily="system-ui, sans-serif" fontWeight="700" fontSize="9" fill="#CCA43B" letterSpacing="0.4">
+      VIDYAPEETH PUNE
+    </text>
+  </svg>
+);
+
+const dypatilSvg = (
+  <svg viewBox="0 0 185 50" className="h-10 sm:h-12 w-auto object-contain" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(6, 6)">
+      <circle cx="18" cy="18" r="16" fill="#0D3B66" stroke="#F4D35E" strokeWidth="2" />
+      <text x="18" y="23" fontFamily="system-ui, sans-serif" fontWeight="900" fontSize="9.5" fill="#F4D35E" textAnchor="middle">DYPU</text>
+    </g>
+    <text x="46" y="22" fontFamily="system-ui, sans-serif" fontWeight="800" fontSize="12" fill="#0D3B66" letterSpacing="-0.2">
+      DY PATIL UNIVERSITY
+    </text>
+    <text x="46" y="36" fontFamily="system-ui, sans-serif" fontWeight="700" fontSize="9.5" fill="#E09F3E" letterSpacing="0.8">
+      MUMBAI ONLINE
+    </text>
+  </svg>
+);
+
+const amritaSvg = (
+  <svg viewBox="0 0 185 50" className="h-10 sm:h-12 w-auto object-contain" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(6, 6)">
+      <circle cx="18" cy="18" r="16" fill="#1A237E" />
+      <path d="M18 7 C18 7 13 14 13 19 C13 22 15 24 18 24 C21 24 23 22 23 19 C23 14 18 7 18 7 Z" fill="#FFB300" />
+      <circle cx="18" cy="28" r="2.5" fill="#FFFFFF" />
+    </g>
+    <text x="46" y="23" fontFamily="system-ui, sans-serif" fontWeight="900" fontSize="14" fill="#1A237E" letterSpacing="0.2">
+      AMRITA
+    </text>
+    <text x="46" y="37" fontFamily="system-ui, sans-serif" fontWeight="800" fontSize="10" fill="#E65100" letterSpacing="0.5">
+      AHEAD ONLINE
+    </text>
+  </svg>
+);
+
+const andhraSvg = (
+  <svg viewBox="0 0 190 50" className="h-10 sm:h-12 w-auto object-contain" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(6, 6)">
+      <circle cx="18" cy="18" r="16" fill="#670928" stroke="#E5A93B" strokeWidth="1.5" />
+      <path d="M10 24 Q18 10 26 24 Z" fill="#E5A93B" />
+      <circle cx="18" cy="17" r="3.5" fill="#FFFFFF" />
+    </g>
+    <text x="46" y="22" fontFamily="system-ui, sans-serif" fontWeight="800" fontSize="12" fill="#670928" letterSpacing="-0.2">
+      ANDHRA UNIVERSITY
+    </text>
+    <text x="46" y="36" fontFamily="system-ui, sans-serif" fontWeight="700" fontSize="9" fill="#888888" letterSpacing="0.5">
+      ESTD 1926 • ONLINE
+    </text>
+  </svg>
+);
+
+const vguSvg = (
+  <svg viewBox="0 0 175 50" className="h-10 sm:h-12 w-auto object-contain" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(6, 7)">
+      <rect width="32" height="32" rx="8" fill="#1E3A8A" />
+      <text x="16" y="22" fontFamily="system-ui, sans-serif" fontWeight="900" fontSize="13" fill="#EA580C" textAnchor="middle">VGU</text>
+    </g>
+    <text x="45" y="22" fontFamily="system-ui, sans-serif" fontWeight="800" fontSize="12" fill="#1E3A8A" letterSpacing="-0.2">
+      VIVEKANANDA
+    </text>
+    <text x="45" y="36" fontFamily="system-ui, sans-serif" fontWeight="700" fontSize="9" fill="#EA580C" letterSpacing="0.5">
+      GLOBAL UNIVERSITY
+    </text>
+  </svg>
+);
+
+const nmimsSvg = (
+  <svg viewBox="0 0 180 50" className="h-10 sm:h-12 w-auto object-contain" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(6, 6)">
+      <rect width="32" height="32" rx="6" fill="#8B0000" />
+      <text x="16" y="21" fontFamily="system-ui, sans-serif" fontWeight="900" fontSize="8" fill="#FFFFFF" textAnchor="middle">NMIMS</text>
+      <text x="16" y="28" fontFamily="system-ui, sans-serif" fontWeight="700" fontSize="5.5" fill="#F4D35E" textAnchor="middle">CDOE</text>
+    </g>
+    <text x="45" y="23" fontFamily="system-ui, sans-serif" fontWeight="900" fontSize="16" fill="#8B0000" letterSpacing="-0.5">
+      NMIMS
+    </text>
+    <text x="46" y="37" fontFamily="system-ui, sans-serif" fontWeight="700" fontSize="8.5" fill="#4B5563" letterSpacing="0.3">
+      DEEMED-TO-BE UNIVERSITY
+    </text>
+  </svg>
+);
+
+const upgradSvg = (
+  <svg viewBox="0 0 185 50" className="h-10 sm:h-12 w-auto object-contain" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(4, 6)">
+      <rect width="32" height="32" rx="6" fill="#0B2545" />
+      <text x="16" y="21" fontFamily="serif" fontWeight="900" fontSize="11" fill="#D4AF37" textAnchor="middle">JGU</text>
+    </g>
+    <text x="42" y="22" fontFamily="system-ui, sans-serif" fontWeight="800" fontSize="11" fill="#0B2545" letterSpacing="-0.2">
+      OP JINDAL & upGrad
+    </text>
+    <text x="42" y="36" fontFamily="system-ui, sans-serif" fontWeight="800" fontSize="9.5" fill="#EB0029" letterSpacing="0.2">
+      DBA & GLOBAL MBA
+    </text>
+  </svg>
+);
+
 // University Logos (Strictly logos/emblems only - no names)
 const universityLogos = [
   {
@@ -79,7 +237,7 @@ const universityLogos = [
   },
   {
     id: "kurukshetra",
-    name: "Kurukshetra University",
+    name: "Kurukshetra University (KUK)",
     image: kurukshetraLogo,
   },
   {
@@ -104,44 +262,82 @@ const universityLogos = [
   },
   {
     id: "vit",
-    name: "Vellore Institute of Technology",
+    name: "Vellore Institute of Technology (VIT)",
     image: vitLogo,
   },
   {
     id: "lpu",
-    name: "Lovely Professional University",
+    name: "Lovely Professional University (LPU)",
     image: lpuLogo,
   },
   {
     id: "manipal",
-    name: "Manipal University",
+    name: "Manipal University Jaipur (MUJ)",
     image: manipalLogo,
   },
   {
     id: "chandigarh",
-    name: "Chandigarh University",
+    name: "Chandigarh University (CUOL)",
     image: chandigarhLogo,
   },
   {
+    id: "uu",
+    name: "Uttaranchal University (UU)",
+    svg: uuSvg,
+  },
+  {
+    id: "smu",
+    name: "Sikkim Manipal University (SMU)",
+    svg: smuSvg,
+  },
+  {
+    id: "upes",
+    name: "UPES Online",
+    svg: upesSvg,
+  },
+  {
+    id: "dpu",
+    name: "Dr. D. Y. Patil Vidyapeeth Pune (DPU)",
+    svg: dpuSvg,
+  },
+  {
+    id: "amrita",
+    name: "Amrita Vishwa Vidyapeetham (Amrita AHEAD)",
+    svg: amritaSvg,
+  },
+  {
+    id: "andhra",
+    name: "Andhra University",
+    svg: andhraSvg,
+  },
+  {
+    id: "vgu",
+    name: "Vivekananda Global University (VGU)",
+    svg: vguSvg,
+  },
+  {
+    id: "dypatil",
+    name: "Dy Patil University Mumbai",
+    svg: dypatilSvg,
+  },
+  {
+    id: "nmims",
+    name: "NMIMS Deemed-to-be-University",
+    svg: nmimsSvg,
+  },
+  {
     id: "upgrad",
-    name: "upGrad",
-    svg: (
-      <svg viewBox="0 0 160 50" className="h-10 sm:h-12 w-auto object-contain" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <text x="5" y="36" fontFamily="system-ui, sans-serif" fontWeight="900" fontSize="34" fill="#EB0029" letterSpacing="-1.5">
-          upGrad
-        </text>
-        <circle cx="132" cy="18" r="4" fill="#EB0029" />
-      </svg>
-    ),
+    name: "OP Jindal University & DBA Programs (upGrad)",
+    svg: upgradSvg,
   },
   {
     id: "adtu",
-    name: "Assam Down Town University",
+    name: "Assam Down Town University (ADTU)",
     image: adtuLogo,
   },
   {
     id: "christ",
-    name: "Christ University",
+    name: "Christ (Deemed to be University)",
     image: christLogo,
   },
   {
@@ -156,7 +352,11 @@ const universityLogos = [
   },
 ];
 
-// 8 Featured Top Online Universities with Admission Cards
+// Split universities into two balanced rows for dual-directional marquee (12 universities each)
+const universityLogosRow1 = universityLogos.slice(0, 12);
+const universityLogosRow2 = universityLogos.slice(12);
+
+// Top Accredited Online Universities with Admission Cards
 const topUniversities = [
   {
     id: "amity",
@@ -199,6 +399,26 @@ const topUniversities = [
     batch: "July 2026 Batch Open",
   },
   {
+    id: "nmims",
+    name: "NMIMS Deemed-to-be-University (CDOE)",
+    svg: nmimsSvg,
+    naac: "NAAC A+",
+    approvals: ["UGC-DEB", "MHRD Category-I", "Autonomy Status"],
+    programs: ["Online MBA (WX)", "Online MBA", "Online BBA", "Online B.Com"],
+    highlights: "Top Tier Management Brand • 500+ Corporate Hiring Partners • Harvard Cases",
+    batch: "July 2026 Batch Open",
+  },
+  {
+    id: "vit",
+    name: "Vellore Institute of Technology (VIT Online)",
+    logo: vitLogo,
+    naac: "NAAC A++",
+    approvals: ["UGC-DEB", "NIRF Top 10", "IoE Status"],
+    programs: ["Online MCA", "Online M.Sc Data Science", "Executive PG Tech"],
+    highlights: "Institution of Eminence • Premier Tech Faculty • Silicon Valley Curriculum",
+    batch: "July 2026 Batch Open",
+  },
+  {
     id: "parul",
     name: "Parul University Online",
     logo: parulLogo,
@@ -216,6 +436,96 @@ const topUniversities = [
     approvals: ["UGC-DEB", "IACBE Accredited", "12B UGC Status"],
     programs: ["Online MBA", "Online MCA", "Online B.Com (Hons)", "Online BBA"],
     highlights: "Self-Paced Learning • Comprehensive E-Library • Industry Readiness",
+    batch: "July 2026 Batch Open",
+  },
+  {
+    id: "uu",
+    name: "Uttaranchal University Online (UU)",
+    svg: uuSvg,
+    naac: "NAAC A+",
+    approvals: ["UGC-DEB", "AICTE Approved", "NIRF Top 150"],
+    programs: ["Online MBA", "Online MCA", "Online BBA", "Online BCA"],
+    highlights: "Distinguished Academic Faculty • Dynamic LMS • 100% Online Remote Exams",
+    batch: "July 2026 Batch Open",
+  },
+  {
+    id: "smu",
+    name: "Sikkim Manipal University (SMU Online)",
+    svg: smuSvg,
+    naac: "NAAC A+",
+    approvals: ["UGC-DEB", "AIU Recognized", "WES Accepted"],
+    programs: ["Online MBA", "Online MCA", "Online BBA", "Online BCA"],
+    highlights: "Legacy of Academic Excellence • Robust LMS • Expansive Global Alumni Base",
+    batch: "July 2026 Batch Open",
+  },
+  {
+    id: "upes",
+    name: "UPES Online (University of Petroleum & Energy Studies)",
+    svg: upesSvg,
+    naac: "NAAC A",
+    approvals: ["UGC-DEB", "QS 5-Star Rated", "IACBE Member"],
+    programs: ["Online MBA", "Online BBA", "Online BCA", "Executive PG Diplomas"],
+    highlights: "Domain-Specific Industry Programs • Global Executive Mentors • Top Placement ROI",
+    batch: "July 2026 Batch Open",
+  },
+  {
+    id: "dpu",
+    name: "Dr. D. Y. Patil Vidyapeeth Pune (DPU Online)",
+    svg: dpuSvg,
+    naac: "NAAC A++",
+    approvals: ["UGC-DEB", "Category-I University", "AICTE Approved"],
+    programs: ["Online MBA", "Online BBA", "Online Certificate Programs"],
+    highlights: "NAAC A++ Graded • Advanced Digital Campus • Live Interactive Weekend Classes",
+    batch: "July 2026 Batch Open",
+  },
+  {
+    id: "dypatil",
+    name: "Dr. D. Y. Patil University Mumbai Online",
+    svg: dypatilSvg,
+    naac: "NAAC A++",
+    approvals: ["UGC-DEB", "AICTE Approved", "NIRF Ranked"],
+    programs: ["Online MBA", "Online BBA", "Online B.Sc Hospitality", "PG Diploma"],
+    highlights: "Premier Mumbai Academic Hub • Practical Industry Case Studies • Career Desk",
+    batch: "July 2026 Batch Open",
+  },
+  {
+    id: "amrita",
+    name: "Amrita Vishwa Vidyapeetham (Amrita AHEAD)",
+    svg: amritaSvg,
+    naac: "NAAC A++",
+    approvals: ["UGC-DEB", "NIRF Rank 7", "Category-I Status"],
+    programs: ["Online MBA", "Online MCA", "Online BCA", "Online B.Com"],
+    highlights: "Ranked #7 in India • World-Class Faculty • International Dual-Degree Options",
+    batch: "July 2026 Batch Open",
+  },
+  {
+    id: "andhra",
+    name: "Andhra University Online",
+    svg: andhraSvg,
+    naac: "NAAC A++",
+    approvals: ["UGC-DEB", "Govt. State University", "NIRF Top 25"],
+    programs: ["Online MBA", "Online MCA", "Online MA", "Online M.Com"],
+    highlights: "95+ Year Esteemed Legacy • Prestigious Govt. Degree • Highly Affordable Fees",
+    batch: "July 2026 Batch Open",
+  },
+  {
+    id: "vgu",
+    name: "Vivekananda Global University (VGU Online)",
+    svg: vguSvg,
+    naac: "NAAC A+",
+    approvals: ["UGC-DEB", "AICTE Approved", "AIU Member"],
+    programs: ["Online MBA", "Online MCA", "Online BBA", "Online BCA"],
+    highlights: "Next-Gen Tech Curriculum • Industry Immersion • Dedicated Placement Drives",
+    batch: "July 2026 Batch Open",
+  },
+  {
+    id: "galgotias",
+    name: "Galgotias University Online",
+    logo: galgotiasLogo,
+    naac: "NAAC A+",
+    approvals: ["UGC-DEB", "AICTE Approved", "NIRF Ranked"],
+    programs: ["Online MBA", "Online MCA", "Online BCA", "Online BBA"],
+    highlights: "Modern Industry-Aligned Syllabi • 100% Online Remote Exams • Placement Cell",
     batch: "July 2026 Batch Open",
   },
   {
@@ -240,19 +550,12 @@ const topUniversities = [
   },
   {
     id: "upgrad",
-    name: "upGrad Online Programs",
-    svg: (
-      <svg viewBox="0 0 160 50" className="h-10 sm:h-12 w-auto object-contain" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <text x="5" y="36" fontFamily="system-ui, sans-serif" fontWeight="900" fontSize="34" fill="#EB0029" letterSpacing="-1.5">
-          upGrad
-        </text>
-        <circle cx="132" cy="18" r="4" fill="#EB0029" />
-      </svg>
-    ),
+    name: "OP Jindal University & DBA Programs (upGrad)",
+    svg: upgradSvg,
     naac: "UGC Entitled",
-    approvals: ["UGC Entitled", "WES Recognized", "Top Global Faculty"],
-    programs: ["Executive MBA", "M.Sc Data Science", "Global MBA", "AI & ML PG"],
-    highlights: "300+ Industry Mentors • 50,000+ Placed • Top Global University Degree",
+    approvals: ["UGC-DEB", "IoE Status", "Top Global Faculty"],
+    programs: ["Doctor of Business Admin (DBA)", "Global MBA", "LL.M Online", "M.Sc Data Science"],
+    highlights: "India's #1 Ranked Private University • Global Doctorate & MBA • 50,000+ Placed",
     batch: "July 2026 Batch Open",
   },
   {
@@ -654,16 +957,17 @@ function Index() {
           </div>
         </section>
 
-        {/* 4. AUTO-SLIDING INFINITE MARQUEE — CLEAN LOGOS ONLY, NO BOXES */}
-        <section className="relative border-y border-border/60 bg-white/80 dark:bg-card/80 py-8 sm:py-12 md:py-14 overflow-hidden">
+        {/* 4. DUAL AUTO-SLIDING INFINITE MARQUEES — OPPOSITE DIRECTIONS */}
+        <section className="relative border-y border-border/60 bg-white/80 dark:bg-card/80 py-6 sm:py-10 space-y-6 sm:space-y-8 overflow-hidden">
           {/* Soft gradient edge fades */}
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 sm:w-44 bg-gradient-to-r from-background via-background/80 to-transparent" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 sm:w-44 bg-gradient-to-l from-background via-background/80 to-transparent" />
 
-          <div className="animate-marquee flex items-center gap-14 sm:gap-24 md:gap-32">
-            {[...universityLogos, ...universityLogos, ...universityLogos].map((uni, idx) => (
+          {/* Row 1 (Top Bar): Moving Right to Left */}
+          <div className="animate-marquee-left flex items-center gap-12 sm:gap-20 md:gap-28">
+            {[...universityLogosRow1, ...universityLogosRow1, ...universityLogosRow1, ...universityLogosRow1].map((uni, idx) => (
               <button
-                key={`${uni.id}-${idx}`}
+                key={`top-bar-${uni.id}-${idx}`}
                 title={uni.name}
                 onClick={() => handleOpenModal(`Direct Admission Guidance for ${uni.name}`)}
                 className="shrink-0 flex items-center justify-center transition-all duration-300 hover:scale-115 focus:outline-none"
@@ -672,7 +976,29 @@ function Index() {
                   <img
                     src={uni.image}
                     alt={uni.name}
-                    className="h-16 sm:h-24 md:h-28 w-auto max-w-[180px] sm:max-w-[260px] md:max-w-[320px] object-contain drop-shadow-sm"
+                    className="h-14 sm:h-20 md:h-24 w-auto max-w-[170px] sm:max-w-[240px] md:max-w-[300px] object-contain drop-shadow-sm"
+                  />
+                ) : (
+                  uni.svg
+                )}
+              </button>
+            ))}
+          </div>
+
+          {/* Row 2 (Bottom Bar): Moving Left to Right */}
+          <div className="animate-marquee-right flex items-center gap-12 sm:gap-20 md:gap-28">
+            {[...universityLogosRow2, ...universityLogosRow2, ...universityLogosRow2, ...universityLogosRow2].map((uni, idx) => (
+              <button
+                key={`bottom-bar-${uni.id}-${idx}`}
+                title={uni.name}
+                onClick={() => handleOpenModal(`Direct Admission Guidance for ${uni.name}`)}
+                className="shrink-0 flex items-center justify-center transition-all duration-300 hover:scale-115 focus:outline-none"
+              >
+                {"image" in uni && uni.image ? (
+                  <img
+                    src={uni.image}
+                    alt={uni.name}
+                    className="h-14 sm:h-20 md:h-24 w-auto max-w-[170px] sm:max-w-[240px] md:max-w-[300px] object-contain drop-shadow-sm"
                   />
                 ) : (
                   uni.svg
@@ -1449,7 +1775,7 @@ function Index() {
                   <li>
                     <a href="#universities" className="transition-colors hover:text-emerald-400 flex items-center gap-1.5">
                       <ChevronRight className="h-3 w-3 text-emerald-500" />
-                      <span>Top 8 Online Universities</span>
+                      <span>Top Online Universities</span>
                     </a>
                   </li>
                   <li>
